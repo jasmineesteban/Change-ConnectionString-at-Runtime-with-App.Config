@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +9,11 @@ namespace Connection_String
 {
     public class SqlHelper
     {
-        SqlConnection cn;
+        MySqlConnection cn;
         
         public SqlHelper(string connectionString)
         {
-            cn = new SqlConnection(connectionString);
+            cn = new MySqlConnection(connectionString);
         }
 
         public bool IsConnection
