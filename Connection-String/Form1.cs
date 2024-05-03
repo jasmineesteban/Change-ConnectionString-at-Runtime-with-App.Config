@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace Connection_String
@@ -16,7 +16,7 @@ namespace Connection_String
             string connectionString = GetConnectionString();
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
                     MessageBox.Show("Test Connection successful.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -33,7 +33,7 @@ namespace Connection_String
             string connectionString = GetConnectionString();
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open(); // Test connection
                     AppSetting setting = new AppSetting();
@@ -62,7 +62,7 @@ namespace Connection_String
             cboServer.Items.Add(@".\SQLEXPRESS");
             cboServer.Items.Add(string.Format(@"{0}\SQLEXPRESS", Environment.MachineName));
             cboServer.Items.Add("localhost");
-            cboServer.SelectedIndex = 0; // Default
+            cboServer.SelectedIndex = 4; // Default
         }
     }
 }

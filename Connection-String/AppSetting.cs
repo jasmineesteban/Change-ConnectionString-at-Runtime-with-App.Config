@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +25,7 @@ namespace Connection_String
         public void SaveConnectionString(string key, string value)
         {
             config.ConnectionStrings.ConnectionStrings[key].ConnectionString = value;
-            config.ConnectionStrings.ConnectionStrings[key].ProviderName = "System.Data.SqlClient";
+            config.ConnectionStrings.ConnectionStrings[key].ProviderName = "System.Data.MySqlClient";
             config.Save(ConfigurationSaveMode.Modified);
         }
             
